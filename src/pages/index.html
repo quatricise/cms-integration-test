@@ -1,0 +1,57 @@
+
+<main>
+
+  <section class="section section--carousel">
+    <div class="section--carousel__slide-container"
+
+      data-cms="true"
+      data-cms-use-children=".section--carousel__slide" 
+      data-cms-use-self="true" 
+      data-cms-src="cms-data-point#154897" 
+      data-cms-type="array|single" 
+      data-cms-overflow="discard|extend" 
+      data-cms-underflow="repeat|hide|error" 
+      data-cms-scripts="script_name_1 script_name_2" 
+    >
+      <div class="section--carousel__slide"></div>
+      <div class="section--carousel__slide"></div>
+      <div class="section--carousel__slide"></div>
+    </div>
+
+      <div 
+        class="section--blabla"
+        data-cms="true"
+        data-cms-use-children="true"
+        >
+      </div>
+  </section>
+  
+</main>
+
+<div style="display: none;" hidden>
+  
+data-cms
+== this makes it visible to the cms, this way you cannot accidentally operate on something that you should not
+
+data-cms-use-children
+== which query selector to use on its children and fill them; using use-self alongside this THROWS ERROR
+
+data-cms-use-self
+== this means the element is filled; using use-children alongside this THROWS ERROR
+
+data-cms-src
+== some kind of content id match from the integrator that is matched against the content database to fetch the right thing
+
+data-cms-type
+== if the src will be an array of similar structs or a single struct/primitive
+
+data-cms-overflow
+== discard-content: dont use all src content if there are not enough children; extend-content: duplicate the last child to make sure all the content from the array is used; using 
+
+data-cms-underflow
+== repeat: repeat from the start; hide: do not fill at all; error: throw error to the CMS user to fill it up properly
+
+data-cms-scripts
+== runs some custom logic on this, I'm not sure if that's useful or not but it's an idea.
+
+</div>
