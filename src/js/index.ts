@@ -26,6 +26,7 @@ const attributes = [
   "cms",
   "cmsUseChildren",
   "cmsUseSelf",
+  "cmsChildrenQuery",
   "cmsSrc",
   "cmsType",
   "cmsOverflow",
@@ -72,6 +73,10 @@ targets.forEach(child => {
         console.log("Uses self, fill this with the src attrib.")
         break
       }        
+      case "cmsChildrenQuery": {
+
+        break
+      }        
       case "cmsSrc": {
 
         break
@@ -91,8 +96,9 @@ targets.forEach(child => {
       case "cmsScripts": {
 
         break
-      }        
+      }    
       default: {
+        const _exhaustiveCheck: never = attribute.key //@todo kinda fix this exhaustive check
         throw new Error(`Element data-cms attribute does not exist: '${camelToDashed(attribute.key)}' \n(i) All available properties are: \n${attributes.map(a => camelToDashed(a)).join(", ")}`)
       }
     }
